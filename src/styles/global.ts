@@ -20,9 +20,13 @@ export default createGlobalStyle`
   }
 
   body{
-    background: linear-gradient(to right, var(--blue-dark) 70%, var(--blue-light) 30%);
+    background: var(--blue-dark);
     color: var(--white);
     -webkit-font-smoothing: antialiased;
+
+    @media (min-width: 560px) {
+      background: linear-gradient(to right, var(--blue-dark) 70%, var(--blue-light) 30%);
+    }
   }
 
   body, button, input{
@@ -31,7 +35,7 @@ export default createGlobalStyle`
   }
 
   h1,h2,h3,h4,h5,h6, strong{
-    font-weight: 500;
+    font-weight: 700;
   }
 
   button{
