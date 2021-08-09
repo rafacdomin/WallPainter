@@ -3,6 +3,10 @@ import { Form } from '@unform/web';
 
 export const Container = styled(Form)`
   padding: 1.8rem;
+  width: 100%;
+  max-width: 1120px;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     margin-bottom: 1.8rem;
@@ -25,5 +29,24 @@ export const Container = styled(Form)`
     &:hover {
       filter: brightness(1.2);
     }
+
+    @media (min-width: 769px) {
+      width: 30rem;
+      align-self: flex-end;
+    }
   }
+`;
+
+export const Card = styled.div`
+  background-color: var(--white);
+  color: var(--black);
+
+  padding: 1.8rem;
+  width: 49%;
+`;
+
+export const Cards = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
 `;
