@@ -9,13 +9,13 @@ export const Info: React.FC = () => {
       <p>Some facts and measures used in our system by default:</p>
       <div>
         <ul>
-          <li>Walls must be between 1.0m and 15.0m in height or width</li>
-          <li>Windows and doors occupy a maximum of 50% of the wall area</li>
+          <li>Walls must be between 100cm and 1500cm in height and width</li>
           <li>
-            Walls with doors are at least 0.3m beyond the height of the door
+            Windows and doors must occupy a maximum of 50% of the wall area
           </li>
-          <li>Window size: 2.0m x 1.2m</li>
-          <li>Door size: 0.8m x 1.9m</li>
+          <li>Walls with doors must be at least 30cm higher than the door</li>
+          <li>Window size: 200cm x 120cm</li>
+          <li>Door size: 80cm x 190cm</li>
         </ul>
       </div>
     </Container>

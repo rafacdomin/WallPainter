@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { Form } from '@unform/web';
 
 export const Container = styled(Form)`
+  margin-top: 4rem;
   padding: 1.8rem;
   width: 100%;
   max-width: 1120px;
@@ -49,4 +50,18 @@ export const Cards = styled.div`
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
+`;
+
+export const ResultCard = styled.div`
+  margin-top: 4rem;
+  background-color: var(--white);
+  color: var(--black);
+
+  padding: 1.8rem;
+  width: 100%;
+  max-width: 1120px;
+
+  ul {
+    margin: 2rem;
+  }
 `;
