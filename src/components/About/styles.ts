@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Header = styled.header`
+  width: 100%;
   display: flex;
   justify-content: center;
   padding: 1.8rem;
@@ -50,6 +51,24 @@ export const Container = styled.section`
       &:hover {
         filter: brightness(1.2);
       }
+    }
+  }
+
+  @media (min-width: 769px) {
+    width: 100%;
+    max-width: 1120px;
+    margin-bottom: 2vw;
+
+    div {
+      max-width: 45rem;
+    }
+
+    img {
+      max-width: 50rem;
+      width: 30vw;
+      opacity: 1;
+      left: unset;
+      right: 15vw;
     }
   }
 `;

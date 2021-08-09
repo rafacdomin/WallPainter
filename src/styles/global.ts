@@ -24,7 +24,7 @@ export default createGlobalStyle`
     color: var(--white);
     -webkit-font-smoothing: antialiased;
 
-    @media (min-width: 560px) {
+    @media (min-width: 769px) {
       background: linear-gradient(to right, var(--blue-dark) 70%, var(--blue-light) 30%);
     }
   }
