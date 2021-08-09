@@ -45,8 +45,9 @@ export const Calculate: React.FC = () => {
         total %= can;
       }
 
-      if (total < 0.5) {
+      if (total < 0.5 && total > 0) {
         acc[0.5] += 1;
+        total = 0;
       }
     });
 
@@ -247,9 +248,7 @@ export const Calculate: React.FC = () => {
     return !showResult ? null : (
       <ResultCard ref={resultRef}>
         <h1>Result:</h1>
-        <p>
-          You will need {liters.toPrecision(2)} liters of paint. You can buy:
-        </p>
+        <p>You will need {liters.toFixed(2)} liters of paint. You can buy:</p>
         <ul>
           {Object.entries(paints).map(can => (
             <li key={can[0]}>
