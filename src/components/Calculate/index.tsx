@@ -12,6 +12,7 @@ import { ExpandableItem } from '../ExpandableItem';
 import { Input } from '../Input';
 
 import { Container, Card, Cards, ResultCard } from './styles';
+import { CustomValidationError } from '../../utils/CustomValidationError';
 
 const walls = [1, 2, 3, 4];
 
@@ -61,12 +62,10 @@ export const Calculate: React.FC = () => {
       const windowArea = 200 * 120;
 
       if (nDoors > 0 && height < 220) {
-        formRef.current?.setErrors({
-          [`height-${wall}`]:
-            'Walls with doors must be at least 30cm higher than the door',
-        });
-
-        return 0;
+        throw new CustomValidationError(
+          `height-${wall}`,
+          'Walls with doors must be at least 30cm higher than the door',
+        );
       }
 
       const wallArea = width * height;
@@ -76,14 +75,10 @@ export const Calculate: React.FC = () => {
       const wallAreaPercent = 1 - (totalWindowArea + totalDoorArea) / wallArea;
 
       if (wallAreaPercent < 0.5) {
-        formRef.current?.setErrors({
-          [`windows-${wall}`]:
-            'Windows and doors must occupy a maximum of 50% of the wall area',
-          [`doors-${wall}`]:
-            'Windows and doors must occupy a maximum of 50% of the wall area',
-        });
-
-        return 0;
+        throw new CustomValidationError(
+          `doors-${wall}`,
+          'Windows and doors must occupy a maximum of 50% of the wall area',
+        );
       }
 
       return wallArea - totalDoorArea - totalWindowArea;
@@ -174,6 +169,12 @@ export const Calculate: React.FC = () => {
           err.inner.forEach(error => {
             validationErrors[String(error.path)] = error.message;
           });
+
+          formRef.current?.setErrors(validationErrors);
+        }
+
+        if (err instanceof CustomValidationError) {
+          validationErrors[String(err.path)] = err.message;
 
           formRef.current?.setErrors(validationErrors);
         }
