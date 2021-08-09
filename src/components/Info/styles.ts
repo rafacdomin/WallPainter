@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.section`
+  width: 100%;
   display: flex;
   flex-direction: column;
 
@@ -24,5 +25,9 @@ export const Container = styled.section`
     li + li {
       margin-top: 0.4rem;
     }
+  }
+
+  @media (min-width: 769px) {
+    max-width: 1120px;
   }
 `;

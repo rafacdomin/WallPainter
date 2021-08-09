@@ -14,8 +14,6 @@ export const Info: React.FC = () => {
           <li>
             Walls with doors are at least 0.3m beyond the height of the door
           </li>
-        </ul>
-        <ul>
           <li>Window size: 2.0m x 1.2m</li>
           <li>Door size: 0.8m x 1.9m</li>
         </ul>
