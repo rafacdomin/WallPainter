@@ -32,7 +32,6 @@ This project was developed with the following technologies:
 
 - [ReactJS](https://reactjs.org/)
 - [Typescript](https://www.typescriptlang.org/)
-- [React Router v5](https://github.com/ReactTraining/react-router)
 - [styled-components](https://styled-components.com/)
 - [Yup](https://www.npmjs.com/package/yup)
 - [Unform](https://unform.dev/)
